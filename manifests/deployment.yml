@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: jgvjpetclinic 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jgvjpetclinic 
+    spec:
+      containers:
+        - name: jgvjpetclinic 
+          image: mycontainerr.azurecr.io/jgvjpetclinic
+          ports:
+          - containerPort: 8080
