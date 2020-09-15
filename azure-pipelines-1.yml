@@ -35,7 +35,7 @@ steps:
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**/*.war'
+    Contents: '**/petclinic.war'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: PetClinic'
