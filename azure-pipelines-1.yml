@@ -21,16 +21,15 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: 'JaCoCo'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
+    jdkArchitectureOption: 'x64'
     sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+    goals: 'package'
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
